@@ -32,7 +32,6 @@ function NavBar() {
                         <Link> Inicio </Link>
                         <Link> Vestidos </Link>
                         <Link> Accesorios </Link>
-                        <Link> Mis compras </Link>
                         <CartWidget />
                         
                     </HStack>
