@@ -1,10 +1,12 @@
 
-# Librería de estilos 
+# Librerías
+
+## Librería de estilos 
 
 En este  proyecto se ha instaldo la la librería de estilos 'Chakra' 
 https://chakra-ui.com/getting-started
 
-# Librería de 'íconos'
+##  Librería de 'íconos'
 
 En este  proyecto se ha instaldo la la librería de íconos 'React icons' 
 https://react-icons.github.io/react-icons/
