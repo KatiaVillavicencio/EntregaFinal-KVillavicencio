@@ -1,21 +1,49 @@
-const products = [
+
+export const products = [
   {
     id: "1",
     nombre: "vestido largo",
-    precio: 1000,
+    precio: 150,
     category: "vestidos",
-    img: "https://www.google.com/search?q=vestido+largo&tbm=isch&hl=es&chips=q:vestido+largo,g_1:noche:zahG0fzojIk%3D&rlz=1C5CHFA_enPE971PE972&sa=X&ved=2ahUKEwjBoP_s8YyAAxViHbkGHXr3CR4Q3VYoAHoECAEQLg&biw=800&bih=719#imgrc=oU6c9N7nHbn_5M&imgdii=UnYYqJzbjTVaMM",
+    img: 'https://picsum.photos/200/200',
     stock: 5,
     description: "Vestido de noche bla bla...",
   },
   {
     id: "2",
     nombre: "vestido corto",
-    precio: 1000,
+    precio: 100,
     category: "vestidos",
-    img: "https://www.google.com/search?q=vestido+largo&tbm=isch&hl=es&chips=q:vestido+largo,g_1:noche:zahG0fzojIk%3D&rlz=1C5CHFA_enPE971PE972&sa=X&ved=2ahUKEwjBoP_s8YyAAxViHbkGHXr3CR4Q3VYoAHoECAEQLg&biw=800&bih=719#imgrc=oU6c9N7nHbn_5M&imgdii=UnYYqJzbjTVaMM",
+    img: 'https://picsum.photos/200/200',
     stock: 5,
     description: "2 Vestido de noche bla bla...",
+  },
+  {
+    id: "3",
+    nombre: "Tacones",
+    precio: 150,
+    category: "zapatos",
+    img: 'https://picsum.photos/200/200',
+    stock: 5,
+    description: "descripcion bla bla...",
+  },
+  {
+    id: "4",
+    nombre: "Tacones-2",
+    precio: 150,
+    category: "zapatos",
+    img: 'https://picsum.photos/200/200',
+    stock: 5,
+    description: "descripcion bla bla...",
+  },
+  {
+    id: "5",
+    nombre: "Aretes",
+    precio: 50,
+    category: "accesorios",
+    img: 'https://picsum.photos/200/200',
+    stock: 5,
+    description: "descripcion bla bla...",
   },
 ];
 

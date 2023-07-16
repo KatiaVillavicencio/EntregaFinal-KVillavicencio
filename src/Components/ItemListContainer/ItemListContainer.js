@@ -1,8 +1,8 @@
 import { ChakraProvider, Box, Center } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList'
-import { useState, useEffect } from "react";
-import {getProducts,getProductsByCategory} from '../asyncMock.js'
+import React, { useState, useEffect } from "react";
+import {getProducts,getProductsByCategory} from '../asyncMock'
 
 
 function ItemListContainer(props) {

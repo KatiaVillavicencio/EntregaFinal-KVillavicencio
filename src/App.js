@@ -7,7 +7,7 @@ import {BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <ChakraProvider className= "App">
+    <ChakraProvider >
 
     <BrowserRouter>
       <NavBar />
