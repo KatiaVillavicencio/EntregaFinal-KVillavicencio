@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Card, CardHeader, CardBody, CardFooter } from "@chakra-ui/react";
+import { Link,  } from "react-router-dom";
+import { Card, CardBody, Button } from "@chakra-ui/react";
 
 const Item = ({ id, nombre, img, precio, category, description }) => {
   return (
@@ -20,7 +20,10 @@ const Item = ({ id, nombre, img, precio, category, description }) => {
 
         <footer>
           <Link to={`/item/${id}`}>
-            <strong> Ver detalles </strong>
+          <Button variant='solid' colorScheme='yellow'>
+     Ver detalles
+      </Button>
+      
           </Link>
         </footer>
         </CardBody>
