@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/PreEntrega1-Villavicencio/static/css/main.38592c2d.css",
+    "main.js": "/PreEntrega1-Villavicencio/static/js/main.f75b581b.js",
+    "static/media/logo-vestidos.png": "/PreEntrega1-Villavicencio/static/media/logo-vestidos.da00e7cbe36c7b4ac8bc.png",
+    "index.html": "/PreEntrega1-Villavicencio/index.html",
+    "main.38592c2d.css.map": "/PreEntrega1-Villavicencio/static/css/main.38592c2d.css.map",
+    "main.f75b581b.js.map": "/PreEntrega1-Villavicencio/static/js/main.f75b581b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38592c2d.css",
+    "static/js/main.f75b581b.js"
+  ]
+}
