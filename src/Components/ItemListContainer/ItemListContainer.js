@@ -28,14 +28,15 @@ function ItemListContainer(props) {
     return (
         <ChakraProvider>
 
-            <Center h='20px' color='black'>
+      <Center h='20px' color='black'>
                 <Box m={2} p={3}>
                     {props.greeting}
                 </Box>
-            </Center>
+            </Center> 
 
+            <Box m={5} p={4}>
             <ItemList products={products}/>
-
+            </Box>
         </ChakraProvider>
     )
 }
