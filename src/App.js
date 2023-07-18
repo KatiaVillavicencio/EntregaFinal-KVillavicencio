@@ -7,21 +7,25 @@ import {BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
+
+
     <ChakraProvider >
 
     <BrowserRouter>
       <NavBar />
       <Routes>
       <Route path='/' element= {<ItemListContainer greeting= {"⭑⭑⭑ Bienvenid@s ⭑⭑⭑"}/>}/>
-      <Route path='/category/:Id' element= {<ItemListContainer/>}/>
-      <Route path='/item/:Id' element= {<ItemDetailContainer />}/>
-
+      <Route path='/category/:categoryId' element= {<ItemListContainer/>}/>
+      <Route path='/item/:id' element= {<ItemDetailContainer />}/>
+      <Route path= '/*/' element={<h2>404 Sitio en constraccion</h2>}/>
       
       </Routes>
+      
 
     </BrowserRouter>
 
     </ChakraProvider>
+   
 
   );
 }

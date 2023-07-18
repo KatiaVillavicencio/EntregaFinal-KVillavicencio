@@ -1,4 +1,4 @@
-import { ChakraProvider, Box, Center } from '@chakra-ui/react';
+import { ChakraProvider, Box, Center} from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList'
 import React, { useState, useEffect } from "react";
@@ -37,6 +37,7 @@ function ItemListContainer(props) {
             <Box m={5} p={4}>
             <ItemList products={products}/>
             </Box>
+
         </ChakraProvider>
     )
 }
