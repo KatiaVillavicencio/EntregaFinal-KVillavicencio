@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.703cf352.css","mappings":"AAAA,EAIE,wBAAmC,CADnC,qBAAsB,CAFtB,QAAW,CACX,SAGF,CCLA,SACE,WACE","sources":["index.css","Components/Item/Item.css"],"sourcesContent":["* {\n  margin: 0px;\n  padding: 0px;\n  box-sizing: border-box;\n  background-color: rgb(251, 251, 240)\n}\n",".ItemImg\n{ width: 100px;\n    };\n\n\n"],"names":[],"sourceRoot":""}
