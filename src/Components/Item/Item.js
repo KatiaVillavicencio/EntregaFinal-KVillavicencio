@@ -8,7 +8,8 @@ const Item = ({ id, nombre, img, precio, category, description }) => {
   return (
     <ChakraProvider>
     <Flex justify="center" >
-    <Card className ="Card">
+
+    <Card className ="card">
       <article className="CardItem">
         <header className="Header">
           <h2 className="ItemHeader">{nombre}</h2>
@@ -18,8 +19,9 @@ const Item = ({ id, nombre, img, precio, category, description }) => {
         </picture>
 
         <CardBody>
-          <p className="Info">Categoria : {category}</p>
-          <p className="Info">Precio: ${precio}</p>
+          <p className="Info">Categoria: {category}</p>
+          <p className="Info">Precio:${precio}</p>
+          
 
           <footer>
             <Link to={`/item/${id}`}>

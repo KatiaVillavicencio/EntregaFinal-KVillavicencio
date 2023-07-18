@@ -1,4 +1,6 @@
+import React from "react";
 import { Card, CardBody, Button } from "@chakra-ui/react";
+
 const ItemDetail = ({ id, nombre, img, precio, stock, description }) => {
   return (
     <Card>
@@ -9,6 +11,7 @@ const ItemDetail = ({ id, nombre, img, precio, stock, description }) => {
         <picture>
           <img src={img} alt={nombre} className="ItemImg" />
         </picture>
+        
         <CardBody>
           <section>
             <p className="Info">Id:{id}</p>

@@ -32,8 +32,8 @@ function NavBar() {
             <Box m={1} p={2}>
               <HStack>
                 <NavLink to={`/`}> Inicio </NavLink>
-                <NavLink to={"/category/vestidos"}> Vestidos </NavLink>
                 <NavLink to={`/category/zapatos`}> Zapatos </NavLink>
+                <NavLink to={"/category/vestidos"}> Vestidos </NavLink>
                 <NavLink to={`/category/accesorios`}> Accesorios </NavLink>
 
                 <CartWidget />
