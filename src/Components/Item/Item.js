@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Card, CardBody, Button, ChakraProvider, Flex} from "@chakra-ui/react";
 
 
-const Item = ({ id, nombre, img, precio, category, description }) => {
+const Item = ({ id, nombre, img, precio, category }) => {
   return (
     <ChakraProvider>
     <Flex justify="center" >

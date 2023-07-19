@@ -3,7 +3,7 @@ import { Card, CardBody, Button } from "@chakra-ui/react";
 
 const ItemDetail = ({ id, nombre, img, precio, stock, description }) => {
   return (
-    <Card>
+    <Card class>
       <article className="CardItem">
         <header className="Header">
           <h2 className="ItemHeader">{nombre}</h2>
