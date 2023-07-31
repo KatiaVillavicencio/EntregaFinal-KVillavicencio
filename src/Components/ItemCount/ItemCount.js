@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
-  const [quantity, SetQuantity] = useState(inictial);
+  const [quantity, SetQuantity] = useState(initial);
 
   const sumar = () => {
     if (quantity < stock) {
@@ -31,3 +31,5 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     </div>
   );
 };
+
+export default ItemCount
