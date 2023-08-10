@@ -1,13 +1,23 @@
 import { BsCartFill } from "react-icons/bs";
-import { ChakraProvider} from "@chakra-ui/react"
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
+import { Link } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
 
 
-function CartWidget() {
-    return (
-        <ChakraProvider>
-                <BsCartFill /> 
-                 0
-        </ChakraProvider>
-    )
-}
-export default CartWidget
+
+const CartWidget = () => {
+  const { totalQuantity } = useContext(CartContext);
+
+  return (
+    <ChakraProvider>
+        <Link
+        to="/cart" style={{ display : totalQuantity > 0 ? "block" : "none" }}>
+        </Link>
+ 
+      <BsCartFill />0
+      {totalQuantity}
+    </ChakraProvider>
+  );
+};
+export default CartWidget;

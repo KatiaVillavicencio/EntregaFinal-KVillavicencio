@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Button, SimpleGrid,} from "@chakra-ui/react";
+import './ItemCount.css';
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [quantity, SetQuantity] = useState(initial);
@@ -10,26 +12,38 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   };
 
   const restar = () => {
-    if (quantity > 1) {
+    if (quantity > 0) {
       SetQuantity(quantity - 1);
     }
   };
 
   return (
-    <div>
+  
+    <div className="botones">
       <div>
-        <button onClick={restar}> - </button>
-        <h3> {quantity} </h3>
-        <button onClick={sumar}> + </button>
+      <SimpleGrid columns={3}>
+        <Button>
+          <button onClick={restar}> - </button>
+        </Button>
+        <h2> {quantity} </h2>
+        
+        <Button>
+          <button onClick={sumar}> + </button>
+        </Button>
+        </SimpleGrid>
+  
       </div>
 
       <div>
-        <button onClick={() => onAdd(quantity)} disabled={!stock}>
-          Agregar al carritoo
-        </button>
+        <Button variant="solid" colorScheme="yellow">
+          <button onClick={() => onAdd(quantity)} disabled={!stock}>
+            Agregar al carrito
+          </button>
+        </Button>
       </div>
     </div>
+  
   );
 };
 
-export default ItemCount
+export default ItemCount;
