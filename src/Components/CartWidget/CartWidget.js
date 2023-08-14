@@ -6,6 +6,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 
 
+
 const CartWidget = () => {
   const { totalQuantity } = useContext(CartContext);
 
@@ -15,8 +16,9 @@ const CartWidget = () => {
         to="/cart" style={{ display : totalQuantity > 0 ? "block" : "none" }}>
         </Link>
  
-      <BsCartFill />0
-      {totalQuantity}
+      <BsCartFill /> {totalQuantity()}
+      <span> </span>
+
     </ChakraProvider>
   );
 };
