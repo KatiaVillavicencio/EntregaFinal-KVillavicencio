@@ -7,7 +7,7 @@ import { Card, CardBody, Button, ChakraProvider, Flex} from "@chakra-ui/react";
 const Item = ({ id, nombre, img, precio, category }) => {
   return (
     <ChakraProvider>
-    <Flex justify="center" >
+    <Flex justify="center">
 
     <Card className ="card">
       <article className="CardItem">

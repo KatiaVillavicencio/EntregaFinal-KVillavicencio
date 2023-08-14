@@ -1,4 +1,6 @@
-import { useState } from "react"
+import { useState } from "react";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 
 
@@ -18,28 +20,30 @@ const CheckoutForm = ({ onConfirm }) => {
     }
 
     return (
-        <div className="container-form">
-            <Form onSubmit={handleConfirm} className="form">
-                <Form.Group className="mb-3">
-                <Form.Label className="label">
+        <div >
+            <Form onSubmit={handleConfirm}>
+                <Form.Group>
+                <Form.Label>
                     Nombre
                     <Form.Control className="input" type="text" value={name} onChange={({ target }) => setName(target.value)}/>
                 </Form.Label>
                 </Form.Group>
-                <Form.Group className="mb-3">
-                <Form.Label className="label">
+
+                <Form.Group >
+                <Form.Label>
                     Telefono
                     <Form.Control className="input" type="text" value={phone} onChange={({ target }) => setPhone(target.value)}/>
                 </Form.Label>
                 </Form.Group>
-                <Form.Group className="mb-3">
-                <Form.Label className="label">
+
+                <Form.Group >
+                <Form.Label>
                     Email
                     <Form.Control className="input" type="text" value={email} onChange={({ target }) => setEmail(target.value)}/>
                 </Form.Label>
                 </Form.Group>
                 <div>
-                    <Button variant="dark" type="submit">Crear Orden</Button>
+                    <Button type="submit">Crear Orden</Button>
                 </div>
             </Form>
         </div>

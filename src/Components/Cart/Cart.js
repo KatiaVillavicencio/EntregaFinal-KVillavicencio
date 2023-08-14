@@ -28,8 +28,9 @@ return (
     <h3>Subtotal: ${total} </h3>
     <Button> <button onClick={() => clearCart()}> Limpiar carrito</button> </Button> 
     <Button> <Link  to= "/"> Seguir comprando</Link></Button> 
-    <Button> <Link  to= "/checkout"> checkout</Link></Button> 
+    <Button> <Link  to= "/checkout"> Checkout</Link></Button> 
 </div>
 )
 };
 export default Cart
+

@@ -1,44 +1,51 @@
-import { ChakraProvider, Box, Center} from '@chakra-ui/react';
-import { useParams } from 'react-router-dom';
-import ItemList from '../ItemList/ItemList'
+import { ChakraProvider, Box, Center } from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
+import ItemList from "../ItemList/ItemList";
 import React, { useState, useEffect } from "react";
-import {getProducts,getProductsByCategory} from '../asyncMock'
-
+import { db } from "../../firebaseConfig";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
 function ItemListContainer(props) {
-    const [products, setProducts] = useState ([])
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    const {categoryId} = useParams ()
+  const { categoryId } = useParams();
 
-    useEffect (() => {
-        const asyncFunc = categoryId ? getProductsByCategory : getProducts;
+  useEffect(() => {
+    setLoading(true);
 
-        asyncFunc(categoryId)
-        .then (response => {
-            setProducts(response)
-        })
-            .catch (error => {
-                console.error(error)
+    const collectionRef = categoryId
+      ? query(collection(db, "products"), where("category", "==", categoryId))
+      : collection(db, "products");
 
-            })
-        }, 
-        [categoryId])
-    
+    getDocs(collectionRef)
+      .then((response) => {
+        const productsAdapted = response.docs.map((doc) => {
+          const data = doc.data();
+          return { id: doc.id, ...data };
+        });
+        setProducts(productsAdapted);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setLoading(false)
+      });
+  }, [categoryId]) 
 
-    return (
-        <ChakraProvider>
+  return (
+    <ChakraProvider>
+      <Center h="20px" color="black">
+        <Box m={2} p={3}>
+          {props.greeting}
+        </Box>
+      </Center>
 
-      <Center h='20px' color='black'>
-                <Box m={2} p={3}>
-                    {props.greeting}
-                </Box>
-            </Center> 
-
-            <Box m={5} p={4}>
-            <ItemList products={products}/>
-            </Box>
-
-        </ChakraProvider>
-    )
+      <Box m={5} p={4}>
+        <ItemList products={products} />
+      </Box>
+    </ChakraProvider>
+  );
 }
-export default ItemListContainer
+export default ItemListContainer;

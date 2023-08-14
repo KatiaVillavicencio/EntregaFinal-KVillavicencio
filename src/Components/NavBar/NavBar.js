@@ -21,7 +21,7 @@ function NavBar() {
           <Spacer />
 
           <Center h="50px" color="black">
-            <Heading as="h3" size="sd">
+            <Heading as="h5" size="sd">
               Fashion Store
             </Heading>
           </Center>
