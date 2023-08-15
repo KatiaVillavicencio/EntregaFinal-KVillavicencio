@@ -2,10 +2,10 @@
 { width: 100px;
     };
 
-    .card {flex-direction: row;}
+.card {flex-direction: row;}
 
-.ItemHeader
-{font-size: large;
+.ItemHeader {
+font-size: large;
 font-weight: 600;}
 
 

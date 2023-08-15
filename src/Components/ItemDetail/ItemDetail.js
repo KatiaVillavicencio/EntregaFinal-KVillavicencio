@@ -30,7 +30,7 @@ const ItemDetail = ({ id, nombre, img, precio, stock, description }) =>
           <img src={img} alt={nombre} className="ItemImg" />
         </picture>
 
-        <CardBody>
+        <CardBody className="cardBody">
           <section>
             <p className="Info">Id:{id}</p>
             <p className="Info">Precio: ${precio}</p>
