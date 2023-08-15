@@ -4,6 +4,7 @@ import ItemList from "../ItemList/ItemList";
 import React, { useState, useEffect } from "react";
 import { db } from "../../firebaseConfig";
 import { getDocs, collection, query, where } from "firebase/firestore";
+import { Button, Stack} from "@chakra-ui/react";
 
 function ItemListContainer(props) {
   const [products, setProducts] = useState([]);
@@ -34,14 +35,31 @@ function ItemListContainer(props) {
       });
   }, [categoryId]) 
 
+  if (loading) {
+    return (
+      <h5>
+        ⭑ Cargando productos...
+        <Stack direction="row" spacing={4}>
+          <Button
+            isLoading
+            loadingText="procesando"
+            colorScheme="gray"
+            variant="solid">
+        </Button>
+        </Stack>
+      </h5>
+    );
+  }
+
   return (
+
     <ChakraProvider>
       <Center h="20px" color="black">
         <Box m={2} p={3}>
           {props.greeting}
         </Box>
       </Center>
-
+  
       <Box m={5} p={4}>
         <ItemList products={products} />
       </Box>

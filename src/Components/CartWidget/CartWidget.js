@@ -15,9 +15,8 @@ const CartWidget = () => {
         <Link
         to="/cart" style={{ display : totalQuantity > 0 ? "block" : "none" }}>
         </Link>
- 
-      <BsCartFill /> {totalQuantity()}
-      <span> </span>
+      <BsCartFill/> 
+      <span> {totalQuantity()} </span>
 
     </ChakraProvider>
   );

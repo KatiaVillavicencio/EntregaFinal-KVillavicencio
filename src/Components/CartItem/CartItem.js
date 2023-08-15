@@ -9,6 +9,7 @@ const CartItem = ({ id, img, nombre, precio, quantity }) => {
   return (
     <div className="cart-item">
       <img src={img} alt={nombre} />
+      <br />
       <div className="item-details">
         <p>Precio: ${precio}</p>
         <p>Cantidad: {quantity}</p>
@@ -19,6 +20,7 @@ const CartItem = ({ id, img, nombre, precio, quantity }) => {
           <Link to={`/cart`}>Eliminar </Link>
         </button>
       </Button>
+
     </div>
   );
 };

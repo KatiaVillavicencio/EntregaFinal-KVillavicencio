@@ -1,89 +1,105 @@
-import { getDocs, addDoc ,collection, query, where, Timestamp, writeBatch, documentId } from "firebase/firestore";
+import {getDocs, addDoc, collection, query,where, Timestamp, writeBatch,documentId,} from "firebase/firestore";
 import { db } from "../../firebaseConfig";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
-
+import { Button, Stack } from "@chakra-ui/react";
 
 const Checkout = () => {
-    const [loading, setLoading] = useState(false)
-    const [orderId, setOrderId] = useState('')
+  const [loading, setLoading] = useState(false);
+  const [orderId, setOrderId] = useState("");
 
-    const {cart, totalQuantity, clearCart} = useContext(CartContext)
+  const { cart, totalQuantity, clearCart } = useContext(CartContext);
 
-    const createOrder = async ({ name, phone, email }) => {
-        setLoading(true)
+  const createOrder = async ({ name, phone, email }) => {
+    setLoading(true);
 
-        try{
-            const objOrder = {
-                buyer: {
-                    name, phone, email
-                },
-                items: cart,
-                total: totalQuantity(),
-                date: Timestamp.fromDate(new Date())
-            }
-            const batch = writeBatch(db)
-            
-            const outOfStock = []
+    try {
+      const objOrder = {
+        buyer: {
+          name,
+          phone,
+          email,
+        },
+        items: cart,
+        total: totalQuantity(),
+        date: Timestamp.fromDate(new Date()),
+      };
+      const batch = writeBatch(db);
 
-            const ids = cart.map(prod => prod.id)
+      const outOfStock = [];
 
-            const productsRef = collection(db, 'products')
+      const ids = cart.map((prod) => prod.id);
 
-            const productosAddedToFirestore = await getDocs(query(productsRef, where(documentId(), 'in', ids)))
+      const productsRef = collection(db, "products");
 
-            const { docs } = productosAddedToFirestore
+      const productosAddedToFirestore = await getDocs(
+        query(productsRef, where(documentId(), "in", ids))
+      );
 
-            docs.forEach(doc => {
-                const dataDoc = doc.data()
-                const stockDb = dataDoc.stock
+      const { docs } = productosAddedToFirestore;
 
-                const productosAgregadosalCarro = cart.find(prod => prod.id === doc.id )
-                const prodQuantity = productosAgregadosalCarro?.quantity
+      docs.forEach((doc) => {
+        const dataDoc = doc.data();
+        const stockDb = dataDoc.stock;
 
-                if(stockDb >= prodQuantity){
-                    batch.update(doc.ref, { stock: stockDb - prodQuantity})
-                }else{
-                    outOfStock.push({ id: doc.id, ...dataDoc})
-                }
-            })
+        const productosAgregadosalCarro = cart.find(
+          (prod) => prod.id === doc.id
+        );
+        const prodQuantity = productosAgregadosalCarro?.quantity;
 
-            if(outOfStock.length === 0){
-                await batch.commit()
-
-                const orderRef = collection(db,'orders')
-
-                const orderAdded = await addDoc(orderRef, objOrder)
-
-                setOrderId(orderAdded.id)
-                clearCart()
-            }else{
-                console.error('hay productos que estan fuera de stock')
-            }
-
-        } catch (error) {
-            console.log(error)
-        } finally {
-            setLoading(false);
+        if (stockDb >= prodQuantity) {
+          batch.update(doc.ref, { stock: stockDb - prodQuantity });
+        } else {
+          outOfStock.push({ id: doc.id, ...dataDoc });
         }
-    }; 
+      });
 
-    if(loading){
-        return <h3>⭑ Cargando su orden de compra...</h3>
+      if (outOfStock.length === 0) {
+        await batch.commit();
+
+        const orderRef = collection(db, "orders");
+
+        const orderAdded = await addDoc(orderRef, objOrder);
+
+        setOrderId(orderAdded.id);
+        clearCart();
+      } else {
+        console.error("hay productos que estan fuera de stock");
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
     }
+  };
 
-    if(orderId){
-        return <h3>⭑ El id de tu compra es: {orderId} </h3>
-    }
+  if (loading) {
+    return (
+      <h4>
+        ⭑ Cargando su orden de compra...
+        <Stack direction="row" spacing={4}>
+          <Button
+            isLoading
+            loadingText="Procesando"
+            colorScheme="gray"
+            variant="outline">
+        </Button>
+        </Stack>
+      </h4>
+    );
+  }
 
-    return(
-        <div>
-            <h3>⭑⭑⭑ Checkout ⭑⭑⭑</h3>
-            <CheckoutForm onConfirm={createOrder}/>
-        </div>
-    )
+  if (orderId) {
+    return <h3>⭑ El id de tu compra es: {orderId} </h3>;
+  }
 
-}
+  return (
+    <div>
+      <h3>⭑⭑⭑ Checkout ⭑⭑⭑</h3>
+      <CheckoutForm onConfirm={createOrder} />
+    </div>
+  );
+};
 
-export default Checkout
+export default Checkout;

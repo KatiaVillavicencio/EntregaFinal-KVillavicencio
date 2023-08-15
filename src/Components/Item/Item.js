@@ -4,14 +4,11 @@ import { Link } from "react-router-dom";
 import { Card, CardBody, Button, ChakraProvider, Flex} from "@chakra-ui/react";
 
 
-
-
 const Item = ({ id, nombre, img, precio, category }) => {
   return (
     <ChakraProvider >
     <Flex justify="center"  >
       <div className="columns-7xs">
-
 
     <Card className ="card">
       <article className="CardItem">
@@ -26,7 +23,6 @@ const Item = ({ id, nombre, img, precio, category }) => {
           <p className="Info">Categoria: {category}</p>
           <p className="Info">Precio:${precio}</p>
           
-
           <footer>
             <Link to={`/item/${id}`}>
               <Button variant="solid" colorScheme="yellow">
