@@ -1,10 +1,15 @@
 
 # Librerías
 
-## Librería de estilos 
+## Librería de estilos 1
 
 En este  proyecto se ha instaldo la la librería de estilos 'Chakra' 
 https://chakra-ui.com/getting-started
+
+## Librería de estilos 2
+
+En este  proyecto se ha instaldo la la librería de estilos 'BootStrap' 
+https://react-bootstrap.netlify.app/
 
 ##  Librería de 'íconos'
 
