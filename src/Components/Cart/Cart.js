@@ -5,7 +5,6 @@ import CartItem from "../CartItem/CartItem";
 import { Button} from "@chakra-ui/react";
 import './Cart.css'
 
-
 const Cart =() => {
 const {cart, clearCart, totalQuantity} = useContext (CartContext)
 
@@ -26,7 +25,7 @@ if (totalQuantity === 0) {
 return (
 <div className="cart">
     {cart.map (p => <CartItem key={p.id} {...p}/>)}
-    <h3>Subtotal: ${total} </h3>
+    <h3> Subtotal: ${total} </h3>
     <Button> <Link onClick={() => clearCart()}> Limpiar carrito</Link> </Button> 
     <Button> <Link  to= "/"> Seguir comprando</Link></Button> 
     <Button> <Link  to= "/checkout"> Checkout</Link></Button> 

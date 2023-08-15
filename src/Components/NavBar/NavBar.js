@@ -36,6 +36,7 @@ function NavBar() {
                 <NavLink to={"/category/vestidos"}> Vestidos </NavLink>
                 <NavLink to={`/category/accesorios`}> Accesorios </NavLink>
 
+
                 <CartWidget />
               </HStack>
             </Box>

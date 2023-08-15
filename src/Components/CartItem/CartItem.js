@@ -1,17 +1,16 @@
 import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
-import { Button } from "@chakra-ui/react";
+import { Button, Spacer } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-const CartItem = ({ id, img, nombre, precio, quantity }) => {
+const CartItem = ({ id,nombre, precio, quantity }) => {
 
   const { removeItem } = useContext(CartContext);
   return (
     <div className="cart-item">
-      <img src={img} alt={nombre} />
-      <br />
+     <h5> ⭑ {nombre}</h5>
       <div className="item-details">
-        <p>Precio: ${precio}</p>
+        <p>Precio unitario: ${precio}</p>
         <p>Cantidad: {quantity}</p>
         <p>Total: ${precio * quantity}</p>
       </div>
@@ -20,8 +19,8 @@ const CartItem = ({ id, img, nombre, precio, quantity }) => {
           <Link to={`/cart`}>Eliminar </Link>
         </button>
       </Button>
-
     </div>
+
   );
 };
 
