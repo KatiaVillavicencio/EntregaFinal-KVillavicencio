@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import './CheckoutForm.css'
 
 
 
@@ -20,30 +21,30 @@ const CheckoutForm = ({ onConfirm }) => {
     }
 
     return (
-        <div >
-            <Form onSubmit={handleConfirm}>
+        <div>
+            <Form onSubmit={handleConfirm} className="form">
                 <Form.Group>
                 <Form.Label>
-                    Nombre
+                    Nombre:
                     <Form.Control className="input" type="text" value={name} onChange={({ target }) => setName(target.value)}/>
                 </Form.Label>
                 </Form.Group>
 
                 <Form.Group >
                 <Form.Label>
-                    Telefono
+                    Teléfono:
                     <Form.Control className="input" type="text" value={phone} onChange={({ target }) => setPhone(target.value)}/>
                 </Form.Label>
                 </Form.Group>
 
                 <Form.Group >
                 <Form.Label>
-                    Email
+                    E-mail:
                     <Form.Control className="input" type="text" value={email} onChange={({ target }) => setEmail(target.value)}/>
                 </Form.Label>
                 </Form.Group>
-                <div>
-                    <Button type="submit">Crear Orden</Button>
+                <div >
+                    <Button className="button" type="submit" variant="solid" >Crear Orden</Button>
                 </div>
             </Form>
         </div>

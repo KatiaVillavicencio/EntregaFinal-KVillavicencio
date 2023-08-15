@@ -4,11 +4,12 @@ import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
 
+
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
     const [orderId, setOrderId] = useState('')
 
-    const { cart, totalQuantity, clearCart} = useContext(CartContext)
+    const {cart, totalQuantity, clearCart} = useContext(CartContext)
 
     const createOrder = async ({ name, phone, email }) => {
         setLoading(true)
@@ -69,16 +70,16 @@ const Checkout = () => {
     }; 
 
     if(loading){
-        return <h1>Cargando su orden de compra...</h1>
+        return <h3>⭑ Cargando su orden de compra...</h3>
     }
 
     if(orderId){
-        return <h1>El id de tu compra es: {orderId}</h1>
+        return <h3>⭑ El id de tu compra es: {orderId} </h3>
     }
 
     return(
         <div>
-            <h1>Checkout</h1>
+            <h3>⭑⭑⭑ Checkout ⭑⭑⭑</h3>
             <CheckoutForm onConfirm={createOrder}/>
         </div>
     )
