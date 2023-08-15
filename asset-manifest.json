@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/PreEntrega1-Villavicencio/static/css/main.52a42147.css",
-    "main.js": "/PreEntrega1-Villavicencio/static/js/main.7fcc9363.js",
+    "main.css": "/PreEntrega1-Villavicencio/static/css/main.300b4301.css",
+    "main.js": "/PreEntrega1-Villavicencio/static/js/main.b3946c2c.js",
     "static/media/logo-vestidos.png": "/PreEntrega1-Villavicencio/static/media/logo-vestidos.da00e7cbe36c7b4ac8bc.png",
     "index.html": "/PreEntrega1-Villavicencio/index.html",
-    "main.52a42147.css.map": "/PreEntrega1-Villavicencio/static/css/main.52a42147.css.map",
-    "main.7fcc9363.js.map": "/PreEntrega1-Villavicencio/static/js/main.7fcc9363.js.map"
+    "main.300b4301.css.map": "/PreEntrega1-Villavicencio/static/css/main.300b4301.css.map",
+    "main.b3946c2c.js.map": "/PreEntrega1-Villavicencio/static/js/main.b3946c2c.js.map"
   },
   "entrypoints": [
-    "static/css/main.52a42147.css",
-    "static/js/main.7fcc9363.js"
+    "static/css/main.300b4301.css",
+    "static/js/main.b3946c2c.js"
   ]
 }
