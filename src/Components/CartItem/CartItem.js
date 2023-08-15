@@ -14,11 +14,10 @@ const CartItem = ({ id, img, nombre, precio, quantity }) => {
         <p>Cantidad: {quantity}</p>
         <p>Total: ${precio * quantity}</p>
       </div>
-      <Button>
-        {" "}
+      <Button variant="solid" colorScheme="yellow">
         <button onClick={() => removeItem(id)}>
           <Link to={`/cart`}>Eliminar </Link>
-        </button>{" "}
+        </button>
       </Button>
     </div>
   );

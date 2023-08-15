@@ -43,8 +43,8 @@ const CheckoutForm = ({ onConfirm }) => {
                     <Form.Control className="input" type="text" value={email} onChange={({ target }) => setEmail(target.value)}/>
                 </Form.Label>
                 </Form.Group>
-                <div >
-                    <Button className="button" type="submit" variant="solid" >Crear Orden</Button>
+                <div>
+                <Button  className="button" className="button" type="submit" variant="solid"> Crear Orden</Button> 
                 </div>
             </Form>
         </div>
