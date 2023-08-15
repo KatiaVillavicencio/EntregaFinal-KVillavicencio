@@ -2,6 +2,9 @@
    margin: 3%;
 }
 .button {
-   background-color: rgb(248, 224, 88);
-font-weight: 700;
+   background-color: rgb(253, 209, 34);
+   padding: 1%;
+   margin: 1%;
+   border-radius: 10px;
+   font-weight: 500;
 }

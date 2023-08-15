@@ -1,9 +1,6 @@
 import { useState } from "react";
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './CheckoutForm.css'
-
-
 
 const CheckoutForm = ({ onConfirm }) => {
     const [name, setName] = useState('')
@@ -44,7 +41,7 @@ const CheckoutForm = ({ onConfirm }) => {
                 </Form.Label>
                 </Form.Group>
                 <div>
-                <Button  className="button" className="button" type="submit" variant="solid"> Crear Orden</Button> 
+              <button className="button" type="submit" variant="solid"> Crear Orden</button> 
                 </div>
             </Form>
         </div>
