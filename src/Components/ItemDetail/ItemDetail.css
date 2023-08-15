@@ -1,4 +1,10 @@
 .cardDetail{
-   margin: 30px;
+  margin: 30px
   
+}
+.ItemImg {
+   margin-inline: 50px;}
+
+.Header {
+   margin-inline: 20px;
 }
