@@ -42,10 +42,3 @@ https://reactrouter.com/en/main
 En este  proyecto se ha instaldo la base de datos 'Firebase Database' para mostrar los productos y crear las ordenes. La configuración se encuentra en el archivo firebaseconfig.js
 https://firebase.google.com/
 
-
-
-
-
-
-
-
