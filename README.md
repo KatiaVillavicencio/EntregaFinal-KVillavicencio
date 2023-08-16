@@ -34,7 +34,7 @@ https://react-icons.github.io/react-icons/
 se utilizó <BsCartFill/> para el icono del cart.
 
 ##  Librería de 'componentes'
-En este proyecto se han usado los componentes de React Router para manejar la navegación, como: BrowserRouter, Route, NavLink y Link.
+En este proyecto se han usado los componentes de 'React Router' para manejar la navegación, como: BrowserRouter, Route, NavLink y Link.
 https://reactrouter.com/en/main
 
 
