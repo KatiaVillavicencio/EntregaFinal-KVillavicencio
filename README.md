@@ -3,6 +3,8 @@
 
 Aplicación de E-Commerce desarrollada en React Js. En esta es una aplicación  podrás seleccionar productos por categorias, agregarlos al carrito de compras y recibir un id de orden de tu compra.
 
+Gif: https://drive.google.com/file/d/1nI7711d-HNPl2S7zrwaZeHIrDyitPjbj/view?usp=sharing
+
 # Librerías
 
 ## Librería de estilos 1
@@ -29,4 +31,5 @@ https://reactrouter.com/en/main
 # Base de datos
 En este  proyecto se ha instaldo la base de datos 'Firebase Database' para mostrar los productos y crear las ordenes. La configuración se encuentra en el archivo firebaseconfig.js
 https://firebase.google.com/
+
 
